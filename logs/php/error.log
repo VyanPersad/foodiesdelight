@@ -1,0 +1,2 @@
+[19-Mar-2024 13:12:27 UTC] PHP Warning:  Undefined property: WP_Ajax_Upgrader_Skin::$api in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-admin\includes\class-theme-upgrader.php on line 160
+[19-Mar-2024 13:32:09 UTC] PHP Warning:  Undefined property: WP_Ajax_Upgrader_Skin::$api in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-admin\includes\class-theme-upgrader.php on line 160
