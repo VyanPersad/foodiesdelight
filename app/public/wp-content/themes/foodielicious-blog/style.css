@@ -508,10 +508,29 @@ textarea {
 	float: none;
 	clear: both;
 }
+.post-card{
+	height: 100px;
+}
+.post-card:after{
+	content: "";
+	display: table;
+	clear: both;
+	height: 100vh;
+}
+
+.column {
+	float: left;
+	padding: 10px;
+  }
+
+.img-thumb{
+	width: 25%;
+}
+
+.post-excerpt{
+	width: 75%;
+}
 /*-[ Header ]-----------------------*/
-
-
-
 
 body > header {
 	float: left;
@@ -536,6 +555,12 @@ body > header {
 	width:100%;
 
 }
+
+.menu-names{
+	margin: 0;
+	position: absolute;
+	top: 25%;
+}		
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -554,10 +579,11 @@ a#pull {
 	width: 100%;
 	max-width: 100%;
 	margin: 0 auto;
-	min-height: 65px; 
+	min-height: 65px;
+	position: relative; 
 } 
 #navigation ul {
-	list-style-type: none
+	list-style-type: none;
 }
 #navigation a {
 	transition: all 0.25s linear;
@@ -571,6 +597,11 @@ a#pull {
 	font-family: 'Lato', 'helvetica neue', helvetica, arial, sans-serif;
 	display: block;
 }
+.primary-navigation li {
+    list-style: none;
+	display: inline;
+	padding-left: 10px;
+  }
 .primary-navigation a .sub {
 	font-size: 11px;
 	font-weight: normal;
@@ -732,6 +763,7 @@ a#pull {
 .post {
 	float: left;
 	width: 100%;
+	padding: 5%;
 }
 .single_post {
 	float: left;
@@ -744,9 +776,10 @@ a#pull {
 }
 .post-single-content {
 	font-size: 15px;
-	line-height: 150%;
+	line-height: 100%;
 	float: left;
 	width: 100%;
+	height: auto;
 }
 
 .ss-full-width {
@@ -790,6 +823,7 @@ span.sticky-post {
 	-o-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	padding:20px 30px;
 	margin-bottom:10px;
+	height: 25%;
 }
 .upper-widgets-grid-wrapper.upper-widgets-grid-wrapper-front-page-only {
 	margin-top:45px;

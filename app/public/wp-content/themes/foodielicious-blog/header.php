@@ -11,7 +11,7 @@
         <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
         <div class="site-header__menu group">
             <nav class="primary-navigation">
-
+                <div class="menu-names"><?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) );?></div>
             </nav>
         </div>
     </div>

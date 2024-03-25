@@ -1,2 +1,53 @@
 [19-Mar-2024 13:12:27 UTC] PHP Warning:  Undefined property: WP_Ajax_Upgrader_Skin::$api in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-admin\includes\class-theme-upgrader.php on line 160
 [19-Mar-2024 13:32:09 UTC] PHP Warning:  Undefined property: WP_Ajax_Upgrader_Skin::$api in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-admin\includes\class-theme-upgrader.php on line 160
+[25-Mar-2024 15:06:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function show_page_menu() in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php:33
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(790): require_once()
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(725): load_template('C:\\Users\\Vyan P...', true, Array)
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\index.php(1): get_header()
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Vyan P...')
+#5 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Vyan P...')
+#6 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#7 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php on line 33
+[25-Mar-2024 15:06:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function show_page_menu() in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php:33
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(790): require_once()
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(725): load_template('C:\\Users\\Vyan P...', true, Array)
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\customizable-blogily\404.php(10): get_header()
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Vyan P...')
+#5 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Vyan P...')
+#6 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#7 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php on line 33
+[25-Mar-2024 15:06:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function show_categories_menu() in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php:32
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(790): require_once()
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(725): load_template('C:\\Users\\Vyan P...', true, Array)
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\index.php(1): get_header()
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Vyan P...')
+#5 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Vyan P...')
+#6 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#7 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php on line 32
+[25-Mar-2024 15:06:55 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function show_categories_menu() in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php:32
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(790): require_once()
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(725): load_template('C:\\Users\\Vyan P...', true, Array)
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\customizable-blogily\404.php(10): get_header()
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Vyan P...')
+#5 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Vyan P...')
+#6 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#7 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php on line 32
+[25-Mar-2024 15:10:57 UTC] PHP Warning:  Undefined variable $logo in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php on line 16
+[25-Mar-2024 15:11:00 UTC] PHP Warning:  Undefined variable $logo in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php on line 16
+[25-Mar-2024 15:11:39 UTC] PHP Warning:  Undefined variable $logo in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php on line 15
+[25-Mar-2024 17:46:23 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "header-menu", expecting ")" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 230
+[25-Mar-2024 17:46:24 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 367
+[25-Mar-2024 17:46:24 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 368
+[25-Mar-2024 17:46:26 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "header-menu", expecting ")" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 230

@@ -1,5 +1,7 @@
 <?php
 add_action('wp_enqueue_scripts', 'foodielicious_blog_enqueue_styles');
+add_theme_support('post-thumbnails');
+
 function foodielicious_blog_enqueue_styles()
 {
   wp_enqueue_style('foodielicious-blog-parent-style', get_template_directory_uri() . '/style.css');
@@ -223,8 +225,17 @@ function foodielicious_blog_sanitize_select($input, $setting)
   return (array_key_exists($input, $choices) ? $input : $setting->default);
 }
 
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'primary' => 'Main',
+      'header-menu' => __( 'Header Menu' )
+     )
+   );
+ }
+ add_action( 'init', 'register_my_menus' );
 
-
+ 
 /**
  * This file represents an example of the code that themes would use to register
  * the required plugins.

@@ -19,12 +19,17 @@ This is the index page.
                         <?php echo get_the_author(); ?>
                     </a>
                 </div>
-                <div class="post excerpt">
-                    <?php the_excerpt();?>
+                <div class="post-card">
+                    <div class=" column img-thumb">
+                        <?php the_post_thumbnail();?>
+                    </div>
+                    <div class="column post-excerpt">
+                        <div class="post excerpt ">
+                            <?php the_excerpt();?>
+                            <a href="<?php echo get_the_permalink()?>" title="<?php the_title_attribute(); ?>">Read More</a>
+                        </div>
+                    </div>
                 </div>
-                <a href="<?php echo get_the_permalink()?>" title="<?php the_title_attribute(); ?>">
-                    Read More
-                </a>
             </div>
         <?php } ?>
         <?php the_posts_pagination() ?>
