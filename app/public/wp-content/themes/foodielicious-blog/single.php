@@ -25,21 +25,21 @@ get_header(); ?>
 				<div class="single_post">
 					<!-- Start Content -->
 					<div id="content" class="post-single-content box mark-links">
-					<header>
-						<!-- Start Title -->
-						<h1 class="title single-title"><?php the_title(); ?></h1>
-						<!-- End Title -->
-						<div class="post-date-customizable"><?php esc_html_e( 'Posted On', 'foodielicious-blog' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></div>
+						<header>
+							<!-- Start Title -->
+							<h1 class="title single-title"><?php the_title(); ?></h1>
+							<!-- End Title -->
+							<div class="post-date-customizable"><?php esc_html_e( 'Posted On', 'foodielicious-blog' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></div>
 
-					</header>
+						</header>
 
-						<?php the_content(); ?>
-						<?php wp_link_pages(array('before' => '<div class="pagination">', 'after' => '</div>', 'link_before'  => '<span class="current"><span class="currenttext">', 'link_after' => '</span></span>', 'next_or_number' => 'next_and_number', 'nextpagelink' => __('Next', 'foodielicious-blog' ), 'previouspagelink' => __('Previous', 'foodielicious-blog' ), 'pagelink' => '%','echo' => 1 )); ?>
-						<?php if($customizable_blogily_single_tags_section == '1') { ?>
-						<!-- Start Tags -->
-						<div class="tags"><?php the_tags('<span class="tagtext">'.__('Tags','foodielicious-blog').':</span>',', ') ?></div>
-						<!-- End Tags -->
-						<?php } ?>
+							<?php the_content(); ?>
+							<?php wp_link_pages(array('before' => '<div class="pagination">', 'after' => '</div>', 'link_before'  => '<span class="current"><span class="currenttext">', 'link_after' => '</span></span>', 'next_or_number' => 'next_and_number', 'nextpagelink' => __('Next', 'foodielicious-blog' ), 'previouspagelink' => __('Previous', 'foodielicious-blog' ), 'pagelink' => '%','echo' => 1 )); ?>
+							<?php if($customizable_blogily_single_tags_section == '1') { ?>
+							<!-- Start Tags -->
+							<div class="tags"><?php the_tags('<span class="tagtext">'.__('Tags','foodielicious-blog').':</span>',', ') ?></div>
+							<!-- End Tags -->
+							<?php } ?>
 					</div><!-- End Content -->
 					<?php if($customizable_blogily_relatedposts_section == '1') { ?>	
 					<!-- Start Related Posts -->
