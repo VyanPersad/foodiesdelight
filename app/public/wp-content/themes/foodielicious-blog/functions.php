@@ -235,6 +235,25 @@ function register_my_menus() {
  }
  add_action( 'init', 'register_my_menus' );
 
+function practicar_post_types(){
+
+  register_post_type('recipe',array(
+    'rewrite'=> array('slug' => 'recipe' ),
+    'has_archive' => true,
+    'supports' => array('title', 'editor', 'thumbnail'),
+    'public' => true,
+    'labels' => array(
+      'name' => "Recipes",
+      'add_new_item' => 'Add New Recipe',
+      'edit_item' => 'Edit Recipe',
+      'all_items' => 'All Recipes',
+      'singular_name' => "Recipe"
+    ),
+  'menu_icon' => 'dashicons-carrot'
+));
+}
+
+add_action('init', 'practicar_post_types');
  
 /**
  * This file represents an example of the code that themes would use to register
@@ -333,3 +352,5 @@ function foodielicious_blog_register_required_plugins() {
 
   tgmpa( $plugins, $config );
 }
+
+
