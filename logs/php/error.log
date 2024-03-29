@@ -51,3 +51,76 @@ Stack trace:
 [25-Mar-2024 17:46:24 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 367
 [25-Mar-2024 17:46:24 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 368
 [25-Mar-2024 17:46:26 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "header-menu", expecting ")" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 230
+[28-Mar-2024 23:15:50 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "after_title", expecting ")" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\sidebar.php on line 11
+[28-Mar-2024 23:15:50 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "after_title", expecting ")" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\sidebar.php on line 11
+[28-Mar-2024 23:18:06 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "after_title", expecting ")" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\sidebar.php on line 11
+[28-Mar-2024 23:18:06 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "after_title", expecting ")" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\sidebar.php on line 11
+[28-Mar-2024 23:18:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 367
+[28-Mar-2024 23:18:07 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-recovery-mode-email-service.php on line 368
+[28-Mar-2024 23:18:25 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "after_title", expecting ")" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\sidebar.php on line 11
+[28-Mar-2024 23:43:54 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "_themename_sidebar_widgets" not found or invalid function name in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php:324
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\widgets.php(1858): do_action('widgets_init')
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php(324): wp_widgets_init('')
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#5 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-settings.php(643): do_action('init')
+#7 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-config.php(103): require_once('C:\\Users\\Vyan P...')
+#8 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-load.php(50): require_once('C:\\Users\\Vyan P...')
+#9 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(13): require_once('C:\\Users\\Vyan P...')
+#10 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#11 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php on line 324
+[28-Mar-2024 23:43:55 UTC] PHP Fatal error:  Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "_themename_sidebar_widgets" not found or invalid function name in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php:324
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\widgets.php(1858): do_action('widgets_init')
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php(324): wp_widgets_init('')
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#5 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#6 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-settings.php(643): do_action('init')
+#7 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-config.php(103): require_once('C:\\Users\\Vyan P...')
+#8 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-load.php(50): require_once('C:\\Users\\Vyan P...')
+#9 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(13): require_once('C:\\Users\\Vyan P...')
+#10 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#11 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\class-wp-hook.php on line 324
+[28-Mar-2024 23:44:11 UTC] PHP Warning:  require_once(C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\sidebar.php): Failed to open stream: No such file or directory in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 258
+[28-Mar-2024 23:44:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\sidebar.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php:258
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-settings.php(611): include()
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-config.php(103): require_once('C:\\Users\\Vyan P...')
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-load.php(50): require_once('C:\\Users\\Vyan P...')
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(13): require_once('C:\\Users\\Vyan P...')
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#5 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 258
+[28-Mar-2024 23:44:11 UTC] PHP Warning:  require_once(C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\sidebar.php): Failed to open stream: No such file or directory in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 258
+[28-Mar-2024 23:44:11 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'sidebar.php' (include_path='.:/usr/share/php:/www/wp-content/pear') in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php:258
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-settings.php(611): include()
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-config.php(103): require_once('C:\\Users\\Vyan P...')
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-load.php(50): require_once('C:\\Users\\Vyan P...')
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(13): require_once('C:\\Users\\Vyan P...')
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#5 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 258
+[29-Mar-2024 00:15:01 UTC] PHP Parse error:  syntax error, unexpected token "endwhile", expecting end of file in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\archive-recipe.php on line 104
+[29-Mar-2024 02:14:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function bloginfor() in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php:9
+Stack trace:
+#0 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(790): require_once()
+#1 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template.php(725): load_template('C:\\Users\\Vyan P...', true, Array)
+#2 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#3 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\archive-recipe.php(14): get_header()
+#4 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-includes\template-loader.php(106): include('C:\\Users\\Vyan P...')
+#5 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-blog-header.php(19): require_once('C:\\Users\\Vyan P...')
+#6 C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\Vyan P...')
+#7 {main}
+  thrown in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\header.php on line 9
+[29-Mar-2024 03:10:49 UTC] PHP Parse error:  syntax error, unexpected token "}" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 264
+[29-Mar-2024 03:10:50 UTC] PHP Parse error:  syntax error, unexpected token "}" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 264
+[29-Mar-2024 03:10:50 UTC] PHP Parse error:  syntax error, unexpected token "}" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 264
+[29-Mar-2024 04:39:47 UTC] PHP Parse error:  syntax error, unexpected identifier "get_header" in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\single.php on line 14

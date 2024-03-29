@@ -10,10 +10,9 @@ $customizable_blogily_single_breadcrumb_section = get_theme_mod('customizable_bl
 $customizable_blogily_single_tags_section = get_theme_mod('customizable_blogily_single_tags_section', '1');
 $customizable_blogily_authorbox_section = get_theme_mod('customizable_blogily_authorbox_section', '1');
 $customizable_blogily_relatedposts_section = get_theme_mod('customizable_blogily_relatedposts_section', '1');
-
 get_header(); ?>
-
 <div id="page" class="single">
+	
 	<div class="content">
 		<!-- Start Article -->
 		<?php if($customizable_blogily_single_breadcrumb_section == '0') { ?>
@@ -29,8 +28,9 @@ get_header(); ?>
 							<!-- Start Title -->
 							<h1 class="title single-title"><?php the_title(); ?></h1>
 							<!-- End Title -->
-							<div class="post-date-customizable"><?php esc_html_e( 'Posted On', 'foodielicious-blog' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></div>
-
+							<div class="post-date-customizable">
+								<?php esc_html_e( 'Posted On', 'foodielicious-blog' ); ?> <?php the_time( get_option( 'date_format' ) ); ?>
+							</div>
 						</header>
 
 							<?php the_content(); ?>

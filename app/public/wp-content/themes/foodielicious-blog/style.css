@@ -49,6 +49,10 @@ section,
 summary {
 	display: block
 }
+aside{
+	float: right;
+	width: 20%;
+}
 audio,
 canvas,
 progress,
@@ -520,7 +524,7 @@ textarea {
 
 .column {
 	float: left;
-	padding: 10px;
+	padding: 5px;
   }
 
 .img-thumb{
@@ -528,7 +532,7 @@ textarea {
 }
 
 .post-excerpt{
-	width: 75%;
+	width: 70%;
 }
 /*-[ Header ]-----------------------*/
 
@@ -560,7 +564,12 @@ body > header {
 	margin: 0;
 	position: absolute;
 	top: 25%;
-}		
+}	
+
+.social-media{
+	width: 20%;
+	float: right;
+}
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -744,10 +753,10 @@ a#pull {
 /*-[ Content ]--------------------*/
 
 .article {
-	width: 68.58%;
+	width: 80%;
 	max-width: 720px;
 	float: left;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 }
 .woocommerce .article {
 	background: #fff;
@@ -807,16 +816,18 @@ span.sticky-post {
 .post.excerpt {
 	clear: both;
 	position: relative;
-	border-radius:5px;
-	margin:15px 0;
-	box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
-	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
-	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
-	-o-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
-	background:#fff;
+	width: 90%;
+	border-radius:10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
+	-o-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
+	background:#fcf9f9;
 }
 #content {
-	background:#fff;
+	background:#f8f7f7;
 	box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
@@ -1270,7 +1281,7 @@ nav #searchform fieldset {
 .footer-widgets .sbutton,
 #sidebars .sbutton {
 	float: right;
-	background-color: #f9f7f2;
+	background-color: #fdfdfd;
 	text-align: center;
 }
 .sidebar .sbutton {
@@ -1505,9 +1516,10 @@ ul.menu li:focus-within ul {
 
 #sidebars .widget {
 	padding: 0px;
-	color: #4a4a4a;
+	color: #f79708;
 	font-size:14px;
 	line-height:150%;
+	width:100%;
 	border-radius:3px;
 }
 
@@ -1570,7 +1582,7 @@ ul.menu li:focus-within ul {
 	border-bottom:0px solid #000;
 }
 #sidebars .widget ul.children {
-	padding-left:10px;
+	padding-left:5px;
 }
 
 .widget:first-of-type h3, #sidebars .widget:first-of-type h3 {
@@ -2701,7 +2713,7 @@ img.custom-logo {
 
 #sidebars .widget {
 	background: #fff;
-	padding: 20px;
+	padding: 15px;
 	box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);

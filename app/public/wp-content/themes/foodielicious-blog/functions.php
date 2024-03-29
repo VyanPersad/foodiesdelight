@@ -1,6 +1,5 @@
 <?php
 add_action('wp_enqueue_scripts', 'foodielicious_blog_enqueue_styles');
-add_theme_support('post-thumbnails');
 
 function foodielicious_blog_enqueue_styles()
 {
@@ -229,32 +228,62 @@ function register_my_menus() {
   register_nav_menus(
     array(
       'primary' => 'Main',
-      'header-menu' => __( 'Header Menu' )
+      'header-menu' => 'Header Menu',
+      'footer_menu' => 'Footer Menu'
      )
    );
  }
  add_action( 'init', 'register_my_menus' );
 
-function practicar_post_types(){
-
+function foodie_post_types(){
   register_post_type('recipe',array(
     'rewrite'=> array('slug' => 'recipe' ),
+    'taxonomies' => array('category'),
     'has_archive' => true,
-    'supports' => array('title', 'editor', 'thumbnail'),
+    'supports' => array('title', 'editor', 'thumbnail','excerpt'),
     'public' => true,
     'labels' => array(
       'name' => "Recipes",
       'add_new_item' => 'Add New Recipe',
       'edit_item' => 'Edit Recipe',
-      'all_items' => 'All Recipes',
+      'all_items' => 'Recipes',
       'singular_name' => "Recipe"
     ),
   'menu_icon' => 'dashicons-carrot'
 ));
 }
+add_action('init', 'foodie_post_types');
 
-add_action('init', 'practicar_post_types');
- 
+function foodie_widget_types(){
+  register_sidebar( array(
+    'name' => esc_html__('Main Sidebar', 'foodielicious'),
+    'id' => 'main-sidebar',
+    'description' => esc_html__('Add widgets to main sidebar'),
+    'before_widget' => '<section id="sidebar" class="widget">',
+    'after_widget' => '</section>',
+    'before_title' => '<h2 class="widget-title">',
+    'after_title' => '</h2>'
+  ));
+
+  register_sidebar( array(
+    'name' => esc_html__('Top Widget 1', 'foodielicious'),
+    'id' => 'top-widget',
+    'description' => esc_html__('Add widgets to top'),
+  ));
+
+}
+add_action('widgets_init','foodie_widget_types');
+
+add_theme_support('post-thumbnails');
+add_theme_support('title-tag');
+add_theme_support('post-format',['aside','gallery','link','image','quote','video','status','audio']);
+add_theme_support('html5');
+add_theme_support('automatic-feed-links');
+add_theme_support('custom-background');
+add_theme_support('custom-header');
+add_theme_support('custom-logo');
+add_theme_support('customize-selective-refresh-widgets');  
+add_theme_support('starter-content');  
 /**
  * This file represents an example of the code that themes would use to register
  * the required plugins.
