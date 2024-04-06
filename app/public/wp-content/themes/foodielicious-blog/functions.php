@@ -83,9 +83,6 @@ if ( ! function_exists( 'foodielicious_blog_archive_post' ) ) {
       </article>
     <?php }
   }
-
-
-
   require get_stylesheet_directory() . '/inc/custom-header.php';
 
   function foodielicious_blog_customize_register($wp_customize) {
@@ -208,9 +205,6 @@ if ( ! function_exists( 'foodielicious_blog_archive_post' ) ) {
 add_action('wp_head', 'foodielicious_blog_color_choice');
 endif;
 
-
-
-
 /* Sanitizers */
 function foodielicious_blog_sanitize_select($input, $setting)
 {
@@ -234,25 +228,6 @@ function register_my_menus() {
    );
  }
  add_action( 'init', 'register_my_menus' );
-
-function foodie_post_types(){
-  register_post_type('recipe',array(
-    'rewrite'=> array('slug' => 'recipe' ),
-    'taxonomies' => array('category'),
-    'has_archive' => true,
-    'supports' => array('title', 'editor', 'thumbnail','excerpt'),
-    'public' => true,
-    'labels' => array(
-      'name' => "Recipes",
-      'add_new_item' => 'Add New Recipe',
-      'edit_item' => 'Edit Recipe',
-      'all_items' => 'Recipes',
-      'singular_name' => "Recipe"
-    ),
-  'menu_icon' => 'dashicons-carrot'
-));
-}
-add_action('init', 'foodie_post_types');
 
 function foodie_widget_types(){
   register_sidebar( array(

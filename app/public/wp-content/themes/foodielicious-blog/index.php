@@ -6,6 +6,7 @@ This is the index page.
         <?php if(have_posts()) { ?>
             <? while(have_posts()) { ?>
                 <?php the_post(); ?>
+            
                 <article class="article">
                     <h2 class="article-header">
                         <a class="title" href="<?php the_permalink() ?>" title="<?php the_title_attribute();?>"><?php the_title()?></a>
