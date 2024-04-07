@@ -13,7 +13,7 @@ $customizable_blogily_relatedposts_section = get_theme_mod('customizable_blogily
 
 
 get_header(); ?>
-This is the archive recipe.
+This is the archive casestudy.
 <div id="page" class="single">
 	<div  id="content" class="post-single-content box mark-links">
 		<div class="article">

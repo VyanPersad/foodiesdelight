@@ -13,16 +13,14 @@ $customizable_blogily_relatedposts_section = get_theme_mod('customizable_blogily
 
 
 get_header(); ?>
-This is the archive recipe.
+This is the archive podcast.
 <div id="page" class="single">
 	<div  id="content" class="post-single-content box mark-links">
 		<div class="article">
 			<?php if(have_posts()) { ?>
 				<? while(have_posts()) { ?>
-					<?php the_post(); ?>		
-					
+					<?php the_post(); ?>					
 						<h2 class="article-header">
-							
 							<a class="title" href="<?php the_permalink() ?>" title="<?php the_title_attribute();?>"><?php the_title()?></a>
 						</h2>
 						<div class="post-info">
@@ -42,7 +40,7 @@ This is the archive recipe.
 							<div class="column post-excerpt">
 								<div class="post excerpt ">
 									<?php the_excerpt();?>
-									<a href="<?php echo get_the_permalink()?>" title="<?php the_title_attribute(); ?>">Read More</a>
+									<a href="<?php echo get_the_permalink()?>" title="<?php the_title_attribute(); ?>">View</a>
 								</div>
 							</div>
 						</div>

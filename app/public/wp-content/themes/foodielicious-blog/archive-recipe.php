@@ -11,7 +11,6 @@ $customizable_blogily_single_tags_section = get_theme_mod('customizable_blogily_
 $customizable_blogily_authorbox_section = get_theme_mod('customizable_blogily_authorbox_section', '1');
 $customizable_blogily_relatedposts_section = get_theme_mod('customizable_blogily_relatedposts_section', '1');
 
-
 get_header(); ?>
 This is the archive recipe.
 <div id="page" class="single">
@@ -36,7 +35,7 @@ This is the archive recipe.
 							</a>
 						</div>
 						<div class="post-card">
-							<div class=" column img-thumb">
+							<div class="featured-thumbnail column img-thumb">
 								<?php the_post_thumbnail();?>
 							</div>
 							<div class="column post-excerpt">
