@@ -763,7 +763,7 @@ a#pull {
 /*-[ Content ]--------------------*/
 
 .article {
-	width: 80%;
+	width: 100%;
 	max-width: 720px;
 	float: left;
 	margin-bottom: 20px;

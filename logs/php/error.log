@@ -695,3 +695,5 @@ Stack trace:
 #11 C:\Users\jousw\Local Sites\foodiesdelight\app\public\index.php(17): require('C:\\Users\\jousw\\...')
 #12 {main}
   thrown in C:\Users\jousw\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\functions.php on line 637
+[08-Apr-2024 03:58:03 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\single.php on line 106
+[08-Apr-2024 03:58:10 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\Vyan Persad\Local Sites\foodiesdelight\app\public\wp-content\themes\foodielicious-blog\single.php on line 106

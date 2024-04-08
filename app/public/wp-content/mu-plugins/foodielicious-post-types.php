@@ -47,6 +47,21 @@
             ),
         'menu_icon' => 'dashicons-microphone'
         ));
+		
+		register_post_type('chef',array(
+			'rewrite'=> array('slug' => 'chef' ),
+			'has_archive' => true,
+			'supports' => array('title', 'editor', 'thumbnail'),
+			'public' => true,
+			'labels' => array(
+				'name' => "Chefs",
+				'add_new_item' => 'Add New Chef',
+				'edit_item' => 'Edit Chef',
+				'all_items' => 'All Chefs',
+				'singular_name' => "Chef"
+			),
+			'menu_icon' => 'dashicons-admin-users'
+		));
     }
     
     add_action('init', 'foodie_post_types');

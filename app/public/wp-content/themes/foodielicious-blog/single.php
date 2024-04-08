@@ -12,7 +12,6 @@ $customizable_blogily_authorbox_section = get_theme_mod('customizable_blogily_au
 $customizable_blogily_relatedposts_section = get_theme_mod('customizable_blogily_relatedposts_section', '1');
 get_header(); ?>
 <div id="page" class="single">
-	
 	<div class="content">
 		<!-- Start Article -->
 		<?php if($customizable_blogily_single_breadcrumb_section == '0') { ?>
@@ -94,10 +93,25 @@ get_header(); ?>
 						</div>
 					<?php endwhile; ?>
 				</article>
+			</div>
+			<div>
 				<!-- End Article -->
 				<!-- Start Sidebar -->
 				<?php get_sidebar(); ?>
 				<!-- End Sidebar -->
+				<div>
+					<b>Consulting Chefs</b><br>
+				<?php
+					$relatedChefs = get_field('consulting_chef');
+					foreach($relatedChefs as $chef){
+					?>
+						<a href="<?php echo get_the_permalink($chef);?>">
+						<img src="<?php the_post_thumbnail_url();?>"><br>
+						<b><?php echo get_the_title($chef);?></b></a>
+					<?php
+					}
+				?>
+				</div>
 			</div>
 		</div>
 		<?php get_footer(); ?>
