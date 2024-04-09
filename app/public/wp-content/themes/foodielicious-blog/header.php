@@ -10,6 +10,8 @@
     <?php wp_head();?>
 </head>
 <header class="site-header">
+    <a href="<?php echo esc_url(site_url('/wp-signup.php')); ?>" class="btn btn--small btn--orange float-left push-right">Login</a>
+    <a href="<?php echo esc_url(site_url('/wp-signup.php')); ?>" class="btn btn--small btn--orange float-left push-right">Sign Up</a>
     <div class="container">
         <h1 class="school-logo-text float-left"><a href="<?php echo site_url() ?>"><strong><?php bloginfo('name')?></strong></a></h1>
         <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
