@@ -1,15 +1,9 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package customizable Lite
- */
+<style>
+	.link:hover{
+		text-decoration: underline;
+	}
+</style>
 
-?>
 <footer id="site-footer" role="contentinfo">
 	<?php if ( is_active_sidebar( 'footer-first' ) || is_active_sidebar( 'footer-second' ) || is_active_sidebar( 'footer-third' ) ) { ?>
 	<div class="container">
@@ -36,10 +30,10 @@
 		<div class="container">
 
         <!-- ADDED CODE FOR FOOTER REFERENCES -->
-        <h3 class="headline headline--small">Explore</h3>
+        <h3 class="headline">Explore Us</h3>
         <ul>
-            <a href="<?php echo site_url('/about-us') ?>">About Us</a>
-            <a href="<?php echo site_url('/cookie-policy') ?>">Cookie Policy</a>
+            <a class="link" href="<?php echo site_url('/about-us') ?>">About Us</a>
+            <a class="link" href="<?php echo site_url('/cookie-policy') ?>">Cookie Policy</a>
         </ul>
 			
             <div class="row" id="copyright-note">
@@ -51,6 +45,7 @@
                 <span class="footer-info-right">
 					<?php echo esc_html__(' | Powered by ', 'customizable-blogily') ?> <a href="<?php echo esc_url('https://superbthemes.com/customizable-blogily/', 'customizable-blogily'); ?>" rel="nofollow noopener"><?php echo esc_html__('Customizable Blogily', 'customizable-blogily') ?></a>
 				</span>
+				
 				<!-- Delete above lines to remove copyright from footer -->
 
 				</span>

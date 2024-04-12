@@ -18,7 +18,6 @@
 <div id="page" class="home-page">
 	<div class="article">
 		<h1 class="postsby">
-		this is the recipie archive
 			<span><?php the_archive_title(); ?></span>
 		</h1>
 		<h3><p><?php the_archive_description(); ?></p></h3>

@@ -1,3 +1,4 @@
+
 <?php
 add_action('wp_enqueue_scripts', 'foodielicious_blog_enqueue_styles');
 function foodielicious_blog_enqueue_styles()
@@ -59,15 +60,20 @@ if ( ! function_exists( 'foodielicious_blog_archive_post' ) ) {
               </h2>
 
               <span class="entry-meta">
-                <!---FIXED CODE FOR ARCHIVE POST DIPLAY --->
+                
+                <!---FIXED CODE FOR ARCHIVE POST DISPLAY --->
                 Posted on
-                <a href="<?php echo get_permalink()?>">
-                <time class="post-date-cutomizable" datetime="<?php echo get_the_date('c')?>"><?php echo get_the_date()?> </time>
-                </a>
+                <b><time class="post-date-cutomizable" datetime="<?php echo get_the_date('c')?>"><?php echo get_the_date()?> </time></b>
 							  By 
-							  <a href="<?php echo get_author_posts_url(get_the_author_meta('ID'))?>">
+							  <a class="highlightCat" href="<?php echo get_author_posts_url(get_the_author_meta('ID'))?>">
 								  <?php echo get_the_author(); ?>
 							  </a>
+                in 
+                <a href="<?php echo get_author_posts_url(get_the_author_meta('ID'))?>">
+                  <?php echo get_the_category_list(', ') ?>
+                </a>
+
+              </span></p>
                 
                 <?php
                 if ( is_sticky() && is_home() && ! is_paged() ) {
@@ -218,7 +224,6 @@ endif;
 
 
 
-
 /* Sanitizers */
 function foodielicious_blog_sanitize_select($input, $setting)
 {
@@ -331,3 +336,150 @@ function foodielicious_blog_register_required_plugins() {
 
   tgmpa( $plugins, $config );
 }
+
+//CUSTOM CODE//
+//displays custom list of recent posts: includes custom post types and default post types
+function recent_posts_shortcode($atts) {
+  // Attributes
+  $atts = shortcode_atts(array(
+    'post_type' => ['recipe','casestudy','podcast','post'], // Default post type
+    'posts_per_page' => 3, // Default number of posts
+  ), $atts);
+
+  // WP Query arguments
+  $args = array(
+    'post_type' => $atts['post_type'],
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'posts_per_page' => $atts['posts_per_page'],
+  );
+
+  // The Query
+  $query = new WP_Query($args);
+
+  // Output
+  $output = '';
+  if ($query->have_posts()) {
+    $output .= '<ul>';
+    while ($query->have_posts()) {
+      $query->the_post();
+      $output .= '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+    }
+    $output .= '</ul>';
+  } else {
+    $output .= '<p>No recent posts found!</p>';
+  }
+
+  // Reset post data
+  wp_reset_postdata();
+
+  // Return output
+  return $output;
+}
+add_shortcode('list_posts', 'recent_posts_shortcode');
+
+//displays a random recipe when the user goes on the home page
+function random_recipe($atts) {
+  // Attributes (optional)
+  $atts = shortcode_atts(array(
+    'post_type' => 'recipe', // Default post type (change as needed)
+  ), $atts);
+
+  // WP Query arguments
+  $args = array(
+    'post_type' => $atts['post_type'],
+    'orderby' => 'rand', // Order by random
+    'posts_per_page' => 1, // Only get 1 post
+  );
+
+  // The Query
+  $query = new WP_Query($args);
+
+  // Output
+  $output = '';
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $query->the_post();
+      $output .= '<div class="recipe-wrapper">';  // Add a wrapper (optional)
+      $output .= '<a style="color:black" class="randRecipe" href="' . get_permalink() . '">' . "Click Me!" . '</a>';
+      // You can add more content about the recipe post here (e.g., featured image)
+      $output .= '</div>';
+    }
+  } else {
+    $output .= '<p>No recipe posts found!</p>';
+  }
+
+  // Reset post data
+  wp_reset_postdata();
+
+  // Return output
+  return $output;
+}
+add_shortcode('rand_recipe', 'random_recipe');
+
+//displays categories and tags for all posts
+function edit_my_query($query) {
+  if ( ( is_home() || is_feed() || is_category() || is_tag() ) 
+          &&  empty( $query->query_vars['suppress_filters'] ) ) {
+    // The 'suppress_filters' test above keeps your menus from breaking
+    $post_type = get_query_var('post_type');
+    if($post_type && $post_type[0] != 'post') {
+      $post_type = $post_type;
+    } else {
+      $post_type = array('post','casestudy','podcast','recipe'); //custom post types added here
+    }
+    $query->set('post_type',$post_type);
+    if (is_category() || is_tag()) {
+    // Add custom taxonomies to category and tag pages
+    if (is_category()) {
+        $taxonomy1 = 'category';
+        $taxonomy2 = 'casestudy_category';
+        $taxonomy3 = 'podcast_category';
+        $taxonomy4 = 'recipe_category';
+      }
+      if (is_tag()){
+        $taxonomy1 = 'post_tag';
+        $taxonomy2 = 'casestudy_tags';
+        $taxonomy3 = 'podcast_tags';
+        $taxonomy4 = 'recipe_tags';
+      }
+      $queried_object = $query->get_queried_object();
+      $slug="";
+       
+
+      if ($queried_object !== null) {
+        $slug = $queried_object->slug;
+      } else {
+        // Handle the case where $queried_object is null
+        $args = array(
+          'post_type' => 'post', // Change to your post type if needed
+          'orderby' => 'date',
+          'order' => 'DESC',
+          'posts_per_page' => 3, // Show all posts (adjust limit as needed)
+        );
+        
+        $query->wp_query($args);
+      }
+      
+     
+      $query->set('tax_query', array(
+        'relation' => 'OR',
+        array(
+          'taxonomy' => $taxonomy1,  'field' => 'slug', 'terms' => $slug
+        ),
+        array(
+          'taxonomy' => $taxonomy2, 'field' => 'slug', 'terms' => $slug
+        ),
+        array(
+          'taxonomy' => $taxonomy3, 'field' => 'slug', 'terms' => $slug
+        ),
+        array(
+          'taxonomy' => $taxonomy4, 'field' => 'slug', 'terms' => $slug
+        )
+      ));
+    }
+  }
+}
+add_action('pre_get_posts', 'edit_my_query');
+
+

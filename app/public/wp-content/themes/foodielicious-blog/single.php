@@ -27,7 +27,6 @@ get_header(); ?>
 					<div id="content" class="post-single-content box mark-links">
 					<header>
 						<!-- Start Title -->
-						This is the single.php
 						<h1 class="title single-title"><?php the_title(); ?></h1>
 						<!-- End Title -->
 						<div class="post-date-customizable"><?php esc_html_e( 'Posted On', 'foodielicious-blog' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></div>

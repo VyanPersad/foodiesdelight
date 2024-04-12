@@ -1,12 +1,19 @@
-<?php
-/**
- * The main template file.
- *
- * Used to display the homepage when home.php doesn't exist.
- */
-?>
+<style>
+.head-text{
+	background: white;
+	padding: 5px;
+	border-radius: 2px;
+	text-align: center;
+	
+	font-size: 2.1em;
+	border-radius: 2px;
+}
+</style>
+
 <?php get_header(); ?>
 	<div id="page" class="home-page">
+
+	<h2 class="head-text">Latest Posts</h2>
 		<div class="article">
 			<?php if ( have_posts() ) :
 				$customizable_blogily_full_posts = get_theme_mod('customizable_blogily_full_posts');
@@ -16,7 +23,6 @@
 				//customizable_blog_post_navigation();
             endif; ?>
 		</div><!-- .article -->
-        this is the home.php page
 		<?php get_sidebar(); ?>
 		</div>
 		<?php get_footer(); ?>

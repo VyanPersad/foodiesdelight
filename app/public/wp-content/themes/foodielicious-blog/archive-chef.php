@@ -19,12 +19,12 @@
 	<div class="article">
 
 		<h1 class="postsby">
-		this is the chef archive
 			<span><?php the_archive_title(); ?></span>
 		</h1>
 		
 		<h2><span><?php the_archive_description(); ?></span></h2>
 		<?php if ( have_posts() ) :
+		
 			$customizable_blogily_full_posts = get_theme_mod('customizable_blogily_full_posts');
 			
 			while ( have_posts() ) : the_post();

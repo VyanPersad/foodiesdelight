@@ -16,6 +16,38 @@ Text Domain: foodielicious-blog
 */
 
 
+/*ADDEDD CSS*/
+.randRecipe {
+    display: block;
+    width: 115px;
+    height: 45px;
+
+    background-color: #FAB526;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration-color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.randRecipe:hover {
+  background-color: #be9980; 
+  color: white;
+}
+
+.highlightCat:hover{
+	text-decoration: underline;
+}
+
+.readmore-button:hover{
+	text-decoration: underline;
+}
+
+
+/*********************************************************************/
+
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -510,9 +542,6 @@ textarea {
 }
 /*-[ Header ]-----------------------*/
 
-
-
-
 body > header {
 	float: left;
 	width: 100%;
@@ -541,6 +570,7 @@ body > header {
 --------------------------------------------------------------*/
 /*-[ Navigation ]-----------------*/
 
+
 a#pull {
 	display: none
 }
@@ -559,10 +589,23 @@ a#pull {
 #navigation ul {
 	list-style-type: none
 }
-#navigation a {
+
+/*DISPLAYS ACTIVE NAV*/
+/*
+.active a{
+	background-color: brown;
+	border-radius: 50px ;
+}
+*/
+
+#navigation a:hover {
 	transition: all 0.25s linear;
 	font-size: 14px;
 	color: #7b7b7b;
+	/*changed to allow hover*/
+	background-color: brown;
+	border-radius: 50px;
+
 	font-weight: bold;
 	text-align: left;
 	text-decoration: none;
@@ -609,6 +652,7 @@ a#pull {
 #navigation ul li.current-menu-item ul a,
 #navigation ul ul li.current-menu-item a {
 	border-bottom:0px solid #fff;
+	
 }
 
 #navigation ul .header-search {
@@ -646,6 +690,7 @@ a#pull {
 	color: #555555;
 	font-weight: normal;
 }
+
 #navigation ul ul li {
 	padding: 0;
 	background: #fff;
@@ -947,6 +992,7 @@ span.entry-meta {
 	font-weight: 400;
 	color: #313131;
 }
+
 .post.excerpt header {
 	margin-bottom: 0;
 }
@@ -1133,7 +1179,7 @@ a:active {
 	.menu-toggle {
 		display: none
 	}
-	.main-navigation ul {
+	.main-navigation ul{
 		display: block
 	}
 }
@@ -1355,6 +1401,7 @@ ul.menu li:focus-within ul {
 /* Make sure select elements fit in widgets. */
 
 .widget select {
+	background-color: blue;
 	max-width: 100%;
 	width: 100%;
 	height: 36px;
@@ -1491,7 +1538,9 @@ ul.menu li:focus-within ul {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 	font-weight: 400;
 }
-#sidebars .widget a {
+/*MODIFIED CSS*/
+#sidebars .widget a:hover {
+	text-decoration: underline;
 	color: #6b6b6b;
 }
 .widget li .children {

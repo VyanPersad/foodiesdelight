@@ -11,6 +11,7 @@
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,18 +49,22 @@
 												<?php the_custom_logo(); ?>
 											</span><!-- END #logo -->
 										<?php } else { ?>
-											<span class="site-logo" itemprop="headline">
 
-												<a href="<?php echo esc_url(home_url()); ?>"><?php bloginfo( 'name' ); ?></a>
+										
+											<span class="site-logo" itemprop="headline">
+									
+												<a href="<?php echo esc_url(home_url()); ?>" class="btn"><?php bloginfo( 'name' ); ?></a>
 												
 												<!--MUST CHANGE UP LOGIN AND SIGNUP -->
-												<a href="<?php echo esc_url(site_url('/wp-signup.php')); ?>" class="btn btn--small btn--orange float-left push-right">Login</a>
-												<a href="<?php echo esc_url(site_url('/wp-signup.php')); ?>" class="btn btn--small btn--orange float-left push-right">Sign Up</a>
+												<a href="<?php echo esc_url(site_url('/wp-signup.php')); ?>" class="btn">Login</a>
+												<a href="<?php echo esc_url(site_url('/wp-signup.php')); ?>" class="btn">Sign Up</a>
 												
 											</span><!-- END #logo -->
+											
 										<?php } ?>
 
 										<!--FIXED MENU HEAD SNIPPIT-->
+										
 										<?php if ( has_nav_menu( 'primary' ) ) { ?>
 											<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'menu clearfix', 'container' => '' ) ); ?>
 											
