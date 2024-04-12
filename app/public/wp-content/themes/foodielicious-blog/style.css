@@ -16,6 +16,38 @@ Text Domain: foodielicious-blog
 */
 
 
+/*ADDEDD CSS*/
+.randRecipe {
+    display: block;
+    width: 115px;
+    height: 45px;
+
+    background-color: #FAB526;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration-color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.randRecipe:hover {
+  background-color: #be9980; 
+  color: white;
+}
+
+.highlightCat:hover{
+	text-decoration: underline;
+}
+
+.readmore-button:hover{
+	text-decoration: underline;
+}
+
+
+/*********************************************************************/
+
+
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -48,10 +80,6 @@ nav,
 section,
 summary {
 	display: block
-}
-aside{
-	float: right;
-	width: 20%;
 }
 audio,
 canvas,
@@ -490,7 +518,6 @@ textarea {
 /*-[ Main container ]---------------*/
 
 .main-container {
-	display: block;
 	width: 100%;
 	margin: 0 auto;
 	max-width: 100%;
@@ -498,12 +525,6 @@ textarea {
 }
 #page,
 .container {
-	display: grid; 
-	grid-template-columns: 2fr 1fr; 
-	grid-template-rows: 1fr; 
-	gap: 5px 5px; 
-	grid-template-areas: 
-	  ". ."; 
 	max-width: 1050px;
 	min-width: 240px;
 	overflow: visible;
@@ -518,31 +539,6 @@ textarea {
 	min-height: 100px;
 	float: none;
 	clear: both;
-}
-.post-card{
-	height: 100px;
-}
-.post-card:after{
-	content: "";
-	display: table;
-	clear: both;
-	height: 100vh;
-}
-.post-card-hp{
-	width: 100%;
-	height: 100px;
-}
-.column {
-	float: left;
-	padding: 5px;
-  }
-
-.img-thumb{
-	width: 25%;
-}
-
-.post-excerpt{
-	width: 70%;
 }
 /*-[ Header ]-----------------------*/
 
@@ -569,21 +565,11 @@ body > header {
 	width:100%;
 
 }
-
-.menu-names{
-	margin: 0;
-	position: absolute;
-	top: 25%;
-}	
-
-.social-media{
-	width: 20%;
-	float: right;
-}
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 /*-[ Navigation ]-----------------*/
+
 
 a#pull {
 	display: none
@@ -598,16 +584,28 @@ a#pull {
 	width: 100%;
 	max-width: 100%;
 	margin: 0 auto;
-	min-height: 65px;
-	position: relative; 
+	min-height: 65px; 
 } 
 #navigation ul {
-	list-style-type: none;
+	list-style-type: none
 }
-#navigation a {
+
+/*DISPLAYS ACTIVE NAV*/
+/*
+.active a{
+	background-color: brown;
+	border-radius: 50px ;
+}
+*/
+
+#navigation a:hover {
 	transition: all 0.25s linear;
 	font-size: 14px;
 	color: #7b7b7b;
+	/*changed to allow hover*/
+	background-color: brown;
+	border-radius: 50px;
+
 	font-weight: bold;
 	text-align: left;
 	text-decoration: none;
@@ -616,11 +614,6 @@ a#pull {
 	font-family: 'Lato', 'helvetica neue', helvetica, arial, sans-serif;
 	display: block;
 }
-.primary-navigation li {
-    list-style: none;
-	display: inline;
-	padding-left: 10px;
-  }
 .primary-navigation a .sub {
 	font-size: 11px;
 	font-weight: normal;
@@ -659,6 +652,7 @@ a#pull {
 #navigation ul li.current-menu-item ul a,
 #navigation ul ul li.current-menu-item a {
 	border-bottom:0px solid #fff;
+	
 }
 
 #navigation ul .header-search {
@@ -696,6 +690,7 @@ a#pull {
 	color: #555555;
 	font-weight: normal;
 }
+
 #navigation ul ul li {
 	padding: 0;
 	background: #fff;
@@ -763,10 +758,10 @@ a#pull {
 /*-[ Content ]--------------------*/
 
 .article {
-	width: 100%;
+	width: 68.58%;
 	max-width: 720px;
 	float: left;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 .woocommerce .article {
 	background: #fff;
@@ -782,7 +777,6 @@ a#pull {
 .post {
 	float: left;
 	width: 100%;
-	padding: 5%;
 }
 .single_post {
 	float: left;
@@ -795,10 +789,9 @@ a#pull {
 }
 .post-single-content {
 	font-size: 15px;
-	line-height: 100%;
+	line-height: 150%;
 	float: left;
 	width: 100%;
-	height: auto;
 }
 
 .ss-full-width {
@@ -821,44 +814,27 @@ span.sticky-post {
 	right: 0px;
 }
 .excerpt {
-	border-radius:5px;
+	border-radius:3px;
 }
 .post.excerpt {
 	clear: both;
 	position: relative;
-	width: 90%;
-	border-radius:10px;
-	margin-left: 10px;
-	margin-right: 10px;
-	box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
-	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
-	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
-	-o-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
-	background:#fcf9f9;
+	border-radius:3px;
+	margin:15px 0;
+	box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
+	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
+	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
+	-o-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
+	background:#fff;
 }
-.post.excerpt.hp {
-	clear: both;
-	position: relative;
-	width: 100%;
-	border-radius:10px;
-	margin-left: 10px;
-	margin-right: 10px;
-	box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
-	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
-	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
-	-o-box-shadow: 0 1px 15px 0 rgba(0,0,0,.1);
-	background:#fcf9f9;
-}
-
 #content {
-	background:#f8f7f7;
+	background:#fff;
 	box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-o-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	padding:20px 30px;
 	margin-bottom:10px;
-	height: 25%;
 }
 .upper-widgets-grid-wrapper.upper-widgets-grid-wrapper-front-page-only {
 	margin-top:45px;
@@ -904,7 +880,6 @@ span.sticky-post {
 }
 .featured-thumbnail img {
 	margin-bottom: 0;
-	margin-right: 5px;
 	width: 100%;
 }
 .featured-thumbnail .latestPost-review-wrapper.wp-review-show-total {
@@ -1017,6 +992,7 @@ span.entry-meta {
 	font-weight: 400;
 	color: #313131;
 }
+
 .post.excerpt header {
 	margin-bottom: 0;
 }
@@ -1203,7 +1179,7 @@ a:active {
 	.menu-toggle {
 		display: none
 	}
-	.main-navigation ul {
+	.main-navigation ul{
 		display: block
 	}
 }
@@ -1306,7 +1282,7 @@ nav #searchform fieldset {
 .footer-widgets .sbutton,
 #sidebars .sbutton {
 	float: right;
-	background-color: #fdfdfd;
+	background-color: #f9f7f2;
 	text-align: center;
 }
 .sidebar .sbutton {
@@ -1425,6 +1401,7 @@ ul.menu li:focus-within ul {
 /* Make sure select elements fit in widgets. */
 
 .widget select {
+	background-color: blue;
 	max-width: 100%;
 	width: 100%;
 	height: 36px;
@@ -1541,10 +1518,9 @@ ul.menu li:focus-within ul {
 
 #sidebars .widget {
 	padding: 0px;
-	color: #f79708;
+	color: #4a4a4a;
 	font-size:14px;
 	line-height:150%;
-	width:100%;
 	border-radius:3px;
 }
 
@@ -1562,7 +1538,9 @@ ul.menu li:focus-within ul {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 	font-weight: 400;
 }
-#sidebars .widget a {
+/*MODIFIED CSS*/
+#sidebars .widget a:hover {
+	text-decoration: underline;
 	color: #6b6b6b;
 }
 .widget li .children {
@@ -1607,7 +1585,7 @@ ul.menu li:focus-within ul {
 	border-bottom:0px solid #000;
 }
 #sidebars .widget ul.children {
-	padding-left:5px;
+	padding-left:10px;
 }
 
 .widget:first-of-type h3, #sidebars .widget:first-of-type h3 {
@@ -2738,7 +2716,7 @@ img.custom-logo {
 
 #sidebars .widget {
 	background: #fff;
-	padding: 15px;
+	padding: 20px;
 	box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-moz-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);
 	-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.05);

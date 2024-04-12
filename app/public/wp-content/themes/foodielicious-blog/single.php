@@ -10,7 +10,9 @@ $customizable_blogily_single_breadcrumb_section = get_theme_mod('customizable_bl
 $customizable_blogily_single_tags_section = get_theme_mod('customizable_blogily_single_tags_section', '1');
 $customizable_blogily_authorbox_section = get_theme_mod('customizable_blogily_authorbox_section', '1');
 $customizable_blogily_relatedposts_section = get_theme_mod('customizable_blogily_relatedposts_section', '1');
+
 get_header(); ?>
+
 <div id="page" class="single">
 	<div class="content">
 		<!-- Start Article -->
@@ -23,22 +25,21 @@ get_header(); ?>
 				<div class="single_post">
 					<!-- Start Content -->
 					<div id="content" class="post-single-content box mark-links">
-						<header>
-							<!-- Start Title -->
-							<h1 class="title single-title"><?php the_title(); ?></h1>
-							<!-- End Title -->
-							<div class="post-date-customizable">
-								<?php esc_html_e( 'Posted On', 'foodielicious-blog' ); ?> <?php the_time( get_option( 'date_format' ) ); ?>
-							</div>
-						</header>
+					<header>
+						<!-- Start Title -->
+						<h1 class="title single-title"><?php the_title(); ?></h1>
+						<!-- End Title -->
+						<div class="post-date-customizable"><?php esc_html_e( 'Posted On', 'foodielicious-blog' ); ?> <?php the_time( get_option( 'date_format' ) ); ?></div>
 
-							<?php the_content(); ?>
-							<?php wp_link_pages(array('before' => '<div class="pagination">', 'after' => '</div>', 'link_before'  => '<span class="current"><span class="currenttext">', 'link_after' => '</span></span>', 'next_or_number' => 'next_and_number', 'nextpagelink' => __('Next', 'foodielicious-blog' ), 'previouspagelink' => __('Previous', 'foodielicious-blog' ), 'pagelink' => '%','echo' => 1 )); ?>
-							<?php if($customizable_blogily_single_tags_section == '1') { ?>
-							<!-- Start Tags -->
-							<div class="tags"><?php the_tags('<span class="tagtext">'.__('Tags','foodielicious-blog').':</span>',', ') ?></div>
-							<!-- End Tags -->
-							<?php } ?>
+					</header>
+
+						<?php the_content(); ?>
+						<?php wp_link_pages(array('before' => '<div class="pagination">', 'after' => '</div>', 'link_before'  => '<span class="current"><span class="currenttext">', 'link_after' => '</span></span>', 'next_or_number' => 'next_and_number', 'nextpagelink' => __('Next', 'foodielicious-blog' ), 'previouspagelink' => __('Previous', 'foodielicious-blog' ), 'pagelink' => '%','echo' => 1 )); ?>
+						<?php if($customizable_blogily_single_tags_section == '1') { ?>
+						<!-- Start Tags -->
+						<div class="tags"><?php the_tags('<span class="tagtext">'.__('Tags','foodielicious-blog').':</span>',', ') ?></div>
+						<!-- End Tags -->
+						<?php } ?>
 					</div><!-- End Content -->
 					<?php if($customizable_blogily_relatedposts_section == '1') { ?>	
 					<!-- Start Related Posts -->
@@ -93,25 +94,10 @@ get_header(); ?>
 						</div>
 					<?php endwhile; ?>
 				</article>
-			</div>
-			<div>
 				<!-- End Article -->
 				<!-- Start Sidebar -->
 				<?php get_sidebar(); ?>
 				<!-- End Sidebar -->
-				<div>
-					<b>Consulting Chefs</b><br>
-				<?php
-					$relatedChefs = get_field('consulting_chef');
-					foreach($relatedChefs as $chef){
-					?>
-						<a href="<?php echo get_the_permalink($chef);?>">
-						<img src="<?php the_post_thumbnail_url();?>"><br>
-						<b><?php echo get_the_title($chef);?></b></a>
-					<?php
-					}
-				?>
-				</div>
 			</div>
 		</div>
 		<?php get_footer(); ?>

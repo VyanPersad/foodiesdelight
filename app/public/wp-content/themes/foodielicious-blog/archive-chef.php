@@ -1,58 +1,39 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying archive pages.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * Used for displaying archive-type pages. These views can be further customized by
+ * creating a separate template for each one.
  *
- * @package customizable Lite
+ * - author.php (Author archive)
+ * - category.php (Category archive)
+ * - date.php (Date archive)
+ * - tag.php (Tag archive)
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
-$customizable_blogily_single_breadcrumb_section = get_theme_mod('customizable_blogily_single_breadcrumb_section', '1');
-$customizable_blogily_single_tags_section = get_theme_mod('customizable_blogily_single_tags_section', '1');
-$customizable_blogily_authorbox_section = get_theme_mod('customizable_blogily_authorbox_section', '1');
-$customizable_blogily_relatedposts_section = get_theme_mod('customizable_blogily_relatedposts_section', '1');
+?>
+<?php get_header(); ?>
 
-get_header(); ?>
-<div id="page" class="single">
-	<div>
-	<?php if(have_posts()) { ?>
-		<? while(have_posts()) { ?>
-			<?php the_post(); ?>		
-				<h2 class="article-header">
-					<a class="title" href="<?php the_permalink() ?>" title="<?php the_title_attribute();?>"><?php the_title()?></a>
-				</h2>
-				<div class="post-info">
-					Posted on 
-					<a href="<?php echo get_permalink()?>">
-						<time class="post-date-cutomizable" datetime="<?php echo get_the_date('c')?>"><?php echo get_the_date()?> </time>
-					</a>
-					By 
-					<a href="<?php echo get_author_posts_url(get_the_author_meta('ID'))?>">
-						<?php echo get_the_author(); ?>
-					</a>
-				</div>
-				<div class="post-card">
-					<div class="featured-thumbnail column img-thumb">
-						<?php the_post_thumbnail();?>
-					</div>
-					<div class="column post-excerpt">
-						<div class="post excerpt">
-							<?php the_excerpt();?>
-							<a href="<?php echo get_the_permalink()?>" title="<?php the_title_attribute(); ?>">Read More</a>
-						</div>
-					</div>
-				</div>	
-		<?php } ?>
-		<?php the_posts_pagination() ?>
-	<?php } else { ?>
-		<p>Sorry no posts match your criteria</p>
-	<?php } ?>
+<div id="page" class="home-page">
+	<div class="article">
+
+		<h1 class="postsby">
+			<span><?php the_archive_title(); ?></span>
+		</h1>
+		
+		<h2><span><?php the_archive_description(); ?></span></h2>
+		<?php if ( have_posts() ) :
+		
+			$customizable_blogily_full_posts = get_theme_mod('customizable_blogily_full_posts');
+			
+			while ( have_posts() ) : the_post();
+			//ADDED PAGINAION HERE//
+				foodielicious_blog_archive_post();
+			endwhile;
+			echo paginate_links();
+		endif; ?>
 	</div>
-	
-	<div>
-		<!-- Start Sidebar -->
-		<?php get_sidebar(); ?>
-		<!-- End Sidebar -->
-	</div>
+	<?php get_sidebar(); ?>
 </div>
-
 <?php get_footer(); ?>

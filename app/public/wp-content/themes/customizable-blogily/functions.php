@@ -188,9 +188,11 @@ function customizable_blogily_setup() {
 	set_post_thumbnail_size( 150, 150, true );
 	add_image_size( 'customizable-blogily-related', 200, 125, true ); //related
 
+  //---CHANGED SNIPPET---//
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'customizable-blogily' ),
+		'primary' => esc_html__( 'headerMenuLocation', 'Header Menu Location' ),
+    
  ) );
 
 	/*
@@ -330,19 +332,53 @@ function customizable_blogily_widgets_init() {
 }
 add_action( 'widgets_init', 'customizable_blogily_widgets_init' );
 
+//WP SORT QUERIES//
+function foodielicious_adjust_queries($query){
+  if(!is_admin() AND is_post_type_archive('recipe')
+                 AND $query->is_main_query()){
+                
+    $query->set('orderby','title');
+    $query->set('order','ASC');
+   
+    wp_reset_postdata();
+                
+  }
+
+  if(!is_admin() AND is_post_type_archive('chef')
+                 AND $query->is_main_query()){
+                
+    $query->set('orderby','title');
+    $query->set('order','ASC');
+  
+    wp_reset_postdata();
+                
+  }
+
+  if(!is_admin() AND is_post_type_archive('podcast')
+                 AND $query->is_main_query()){
+                
+    $query->set('orderby','title');
+    $query->set('order','ASC');
+    
+    wp_reset_postdata();
+                
+  }
+
+  if(!is_admin() AND is_post_type_archive('casestudy')
+                 AND $query->is_main_query()){
+                
+    $query->set('orderby','title');
+    $query->set('order','ASC');
+
+    wp_reset_postdata();
+                
+  }
+}
+add_action('pre_get_posts', 'foodielicious_adjust_queries');
+
 function customizable_blogily_custom_sidebar() {
     // Default sidebar.
   $sidebar = 'sidebar';
-
-    // Woocommerce.
-  if ( customizable_blogily_is_wc_active() ) {
-    if ( is_shop() || is_product_category() ) {
-      $sidebar = 'shop-sidebar';
-    }
-    if ( is_product() ) {
-      $sidebar = 'product-sidebar';
-    }
-  }
 
   return $sidebar;
 }
@@ -355,13 +391,7 @@ function customizable_blogily_scripts() {
 
 	$handle = 'customizable-blogily-style';
 
-    // WooCommerce
-  if ( customizable_blogily_is_wc_active() ) {
-    if ( is_woocommerce() || is_cart() || is_checkout() ) {
-      wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce2.css' );
-      $handle = 'woocommerce';
-    }
-  }
+    
 
   wp_enqueue_script( 'customizable-blogily-customscripts', get_template_directory_uri() . '/js/customscripts.js',array('jquery'),'',true); 
 
@@ -395,6 +425,26 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function display_child_pages(){
+
+  global $post; 
+  
+  if ( is_page() && $post->post_parent )
+    
+      $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+  else
+      $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+    
+  if ( $childpages ) {
+    
+      $string = '<ul class="wpb_page_list">' . $childpages . '</ul>';
+  }
+    
+  return $string;
+
+}
+add_shortcode('menu_page', 'display_child_pages');
 
 
 
@@ -747,7 +797,7 @@ if ( customizable_blogily_is_wc_active() ) {
 /**
  * Post Layout for Archives
  */
-if ( ! function_exists( 'customizable_blogily_archive_post' ) ) {
+if (! function_exists( 'customizable_blogily_archive_post' )) {
     /**
      * Display a post of specific layout.
      * 
@@ -785,14 +835,17 @@ if ( ! function_exists( 'customizable_blogily_archive_post' ) ) {
               </h2>
 
               <span class="entry-meta">
-                <?php echo get_the_date(); ?>
+                <p> Posted by <?php the_author_posts_link();?>
+                            on <?php the_time('D M j, Y');?>
+                            in <?php echo get_the_category_list(', ') ?>
+                </p>
                 <?php
                 if ( is_sticky() && is_home() && ! is_paged() ) {
                   printf( ' / <span class="sticky-text">%s</span>', __( 'Featured', 'customizable-blogily' ) );
                 } ?>
               </span>
               <div class="post-content">
-                <?php echo customizable_blogily_excerpt(50); ?>...
+                <?php echo customizable_blogily_excerpt(50); ?>
               </div>
             <?php else : ?>
               <?php if (customizable_blogily_post_has_moretag()) : ?>
