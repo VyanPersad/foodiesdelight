@@ -23,7 +23,6 @@ get_header(); ?>
 						<div class="single_page single_post clear">
 							<div id="content" class="post-single-content box mark-links">
 							<header>
-								This is page.php
 								<h1 class="title"><?php the_title(); ?></h1>
 							</header>
 								<?php the_content(); ?>                                    

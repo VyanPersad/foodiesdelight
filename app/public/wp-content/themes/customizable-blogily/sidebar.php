@@ -13,7 +13,9 @@ $sidebar = customizable_blogily_custom_sidebar(); ?>
 	<div id="sidebars" class="sidebar">
 		<div class="sidebar_list">
 			<?php if ( ! dynamic_sidebar( $sidebar )) : ?>
+				
 			<?php endif; ?>
 		</div>
 	</div><!--sidebars-->
+	
 </aside>

@@ -332,19 +332,53 @@ function customizable_blogily_widgets_init() {
 }
 add_action( 'widgets_init', 'customizable_blogily_widgets_init' );
 
+//WP SORT QUERIES//
+function foodielicious_adjust_queries($query){
+  if(!is_admin() AND is_post_type_archive('recipe')
+                 AND $query->is_main_query()){
+                
+    $query->set('orderby','title');
+    $query->set('order','ASC');
+   
+    wp_reset_postdata();
+                
+  }
+
+  if(!is_admin() AND is_post_type_archive('chef')
+                 AND $query->is_main_query()){
+                
+    $query->set('orderby','title');
+    $query->set('order','ASC');
+  
+    wp_reset_postdata();
+                
+  }
+
+  if(!is_admin() AND is_post_type_archive('podcast')
+                 AND $query->is_main_query()){
+                
+    $query->set('orderby','title');
+    $query->set('order','ASC');
+    
+    wp_reset_postdata();
+                
+  }
+
+  if(!is_admin() AND is_post_type_archive('casestudy')
+                 AND $query->is_main_query()){
+                
+    $query->set('orderby','title');
+    $query->set('order','ASC');
+
+    wp_reset_postdata();
+                
+  }
+}
+add_action('pre_get_posts', 'foodielicious_adjust_queries');
+
 function customizable_blogily_custom_sidebar() {
     // Default sidebar.
   $sidebar = 'sidebar';
-
-    // Woocommerce.
-  if ( customizable_blogily_is_wc_active() ) {
-    if ( is_shop() || is_product_category() ) {
-      $sidebar = 'shop-sidebar';
-    }
-    if ( is_product() ) {
-      $sidebar = 'product-sidebar';
-    }
-  }
 
   return $sidebar;
 }
@@ -357,13 +391,7 @@ function customizable_blogily_scripts() {
 
 	$handle = 'customizable-blogily-style';
 
-    // WooCommerce
-  if ( customizable_blogily_is_wc_active() ) {
-    if ( is_woocommerce() || is_cart() || is_checkout() ) {
-      wp_enqueue_style( 'woocommerce', get_template_directory_uri() . '/css/woocommerce2.css' );
-      $handle = 'woocommerce';
-    }
-  }
+    
 
   wp_enqueue_script( 'customizable-blogily-customscripts', get_template_directory_uri() . '/js/customscripts.js',array('jquery'),'',true); 
 
@@ -398,72 +426,25 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-/**
- * CUSTOM ADDED CODE
- */
-// function display_random_dish_image() {
-//   // Path to the folder containing dish images
-//   $image_folder = ABSPATH . 'wp-content/themes/foodielicious-blog/guessinggameimages';
+function display_child_pages(){
 
-//   // Get a list of all image files in the folder
-//   $images = glob($image_folder . '/*.jpg'); // Adjust file extension as needed
+  global $post; 
+  
+  if ( is_page() && $post->post_parent )
+    
+      $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+  else
+      $childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+    
+  if ( $childpages ) {
+    
+      $string = '<ul class="wpb_page_list">' . $childpages . '</ul>';
+  }
+    
+  return $string;
 
-//   // Debugging: Output the contents of the $images array
-//   var_dump($images);
-
-//   // Select a random image from the list
-//   $random_image = $images[array_rand($images)];
-
-//   // Output the image HTML
-//   echo '<img src="' . esc_attr($random_image) . '" alt="Random Dish Image">';
-// }
-
-
-// Add a shortcode to display the guessing game on a WordPress page
-function display_guessing_game() {
-  ob_start(); // Start output buffering
-  ?>
-  <div id="guessing-game">
-      <h2>Guess the Name</h2>
-      <div id="image-container">
-          <?php
-          // Path to a specific image file for testing
-          $imagePath = get_template_directory_uri() . '/guessinggameimages/peleau.jpg';
-
-          // Display the image
-          echo '<img src="' . $imagePath . '" alt="Guess the Image">';
-          ?>
-      </div>
-      <form id="guess-form">
-          <label for="guess">Enter your guess:</label>
-          <input type="text" id="guess" name="guess">
-          <button type="button" id="submit-guess">Submit Guess</button>
-      </form>
-      <div id="result"></div>
-  </div>
-
-  <script>
-      // JavaScript code to handle form submission and checking the guess
-      document.addEventListener('DOMContentLoaded', function() {
-          var submitGuessBtn = document.getElementById('submit-guess');
-          if (submitGuessBtn) {
-              submitGuessBtn.addEventListener('click', function () {
-                  var guess = document.getElementById('guess').value;
-                  var imageName = 'peleau'; // Assuming the image file name is 'peleau.png' without extension
-                  var resultDiv = document.getElementById('result');
-                  if (guess.toLowerCase() === imageName.toLowerCase()) {
-                      resultDiv.innerHTML = 'Congratulations! You guessed it right!';
-                  } else {
-                      resultDiv.innerHTML = 'Sorry, try again!';
-                  }
-              });
-          }
-      });
-  </script>
-  <?php
-  return ob_get_clean(); // Return the buffered content
 }
-add_shortcode('guessing_game', 'display_guessing_game');
+add_shortcode('menu_page', 'display_child_pages');
 
 
 
