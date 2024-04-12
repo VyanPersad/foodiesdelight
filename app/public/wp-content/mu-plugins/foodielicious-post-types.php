@@ -2,9 +2,9 @@
     function foodie_post_types(){
     register_post_type('recipe',array(
         'rewrite'=> array('slug' => 'recipe' ),
-        'taxonomies' => array('category'),
+        'taxonomies' => array('category','post_tag'),
         'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail','excerpt'),
+        'supports' => array('title', 'editor', 'thumbnail','excerpt','author'),
         'public' => true,
         'labels' => array(
         'name' => "Recipes",
@@ -18,7 +18,7 @@
 
     register_post_type('casestudy',array(
         'rewrite'=> array('slug' => 'casestudy' ),
-        'taxonomies' => array('category'),
+        'taxonomies' => array('category','post_tag'),
         'has_archive' => true,
         'supports' => array('title', 'editor', 'thumbnail','excerpt'),
         'public' => true,
@@ -34,7 +34,7 @@
 
     register_post_type('podcast',array(
         'rewrite'=> array('slug' => 'podcast' ),
-        'taxonomies' => array('category'),
+        'taxonomies' => array('category','post_tag'),
         'has_archive' => true,
         'supports' => array('title', 'editor', 'thumbnail','excerpt'),
         'public' => true,
@@ -50,6 +50,7 @@
 
     register_post_type('chef',array(
         'rewrite'=> array('slug' => 'chef' ),
+        'taxonomies' => array('category'),
         'has_archive' => true,
         'supports' => array('title', 'editor', 'thumbnail'),
         'public' => true,
